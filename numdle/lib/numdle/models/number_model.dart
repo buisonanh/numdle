@@ -9,7 +9,7 @@ class Number extends Equatable{
 
   final List<Letter> letters;
 
-  String get wordString() => letters.map((e) => e.val).join();
+  String get wordString => letters.map((e) => e.val).join();
 
   void addLetter(String val) {
     final currentIndex = letters.indexWhere((e) => e.val.isEmpty);

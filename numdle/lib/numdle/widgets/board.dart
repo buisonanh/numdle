@@ -14,7 +14,7 @@ class Board extends StatelessWidget {
     return Column(
       children: board
           .map(
-            (word) => Row(
+            (number) => Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: number.letters
                   .map((letter) => BoardTile(letter: letter))

@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:numdle/app/app.dart';
 
 import 'package:numdle/main.dart';
 

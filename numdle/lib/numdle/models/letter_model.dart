@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:numdle/app/app_colors.dart';
 
 enum LetterStatus { initial, notInNumber, inNumber, correct }
@@ -46,4 +47,7 @@ class Letter extends Equatable {
       status: status ?? this.status,
     );
   }
+
+  @override
+  List<Object?> get props => [val, status];
 }
