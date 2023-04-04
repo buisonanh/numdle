@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:numdle/numdle/models/letter_model.dart';
 
 const _qwerty = [
-  ['0', '1', '2', '3', '4', 'DEL'],
-  ['5', '6', '7', '8', '9', 'ENTER'],
+  ['5', '6', '7', '8', '9', 'DEL'],
+  ['0', '1', '2', '3', '4', 'ENTER'],
 ];
 
 class Keyboard extends StatelessWidget {
@@ -63,7 +63,7 @@ class Keyboard extends StatelessWidget {
 class _KeyboardButton extends StatelessWidget {
   const _KeyboardButton({ 
     Key? key,
-    this.height = 45,
+    this.height = 50,
     this.width = 50,
     required this.onTap,
     required this.backgroundColor,
@@ -76,7 +76,7 @@ class _KeyboardButton extends StatelessWidget {
       _KeyboardButton(
         width: 70,
         onTap: onTap,
-        backgroundColor: Colors.grey,
+        backgroundColor: Color.fromRGBO(39, 125, 161, 150),
         letter: 'DEL',
       );
 
@@ -86,7 +86,7 @@ class _KeyboardButton extends StatelessWidget {
       _KeyboardButton(
         width: 70,
         onTap: onTap,
-        backgroundColor: Colors.grey,
+        backgroundColor: Color.fromRGBO(39, 125, 161, 50),
         letter: 'ENTER',
       );
 
