@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:numdle/app/app_colors.dart';
 import 'package:numdle/numdle/data/number_list.dart';
@@ -20,6 +21,11 @@ class _NumdleScreenState extends State<NumdleScreen> {
   final List<Number> _board = List.generate(
     6,
     (_) => Number(letters: List.generate(5, (_) => Letter.empty())),
+  );
+
+  final List<List<GlobalKey<FlipCardState>>> _flipCardKeys = List.generate(
+    6,
+    (_) => List.generate(5, (_) => GlobalKey<FlipCardState>()),
   );
 
   int _currentNumberIndex = 0;
@@ -52,7 +58,7 @@ class _NumdleScreenState extends State<NumdleScreen> {
       body:  Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Board(board: _board),
+          Board(board: _board, flipCardKeys: _flipCardKeys),
           const SizedBox(height: 80),
           Keyboard(
             onKeyTapped: _onKeyTapped,
@@ -77,7 +83,7 @@ class _NumdleScreenState extends State<NumdleScreen> {
     }
   }
 
-  void _onEnterTapped(){
+  Future<void> _onEnterTapped() async {
     if (_gameStatus == GameStatus.playing &&
         _currentNumber != null &&
         !_currentNumber!.letters.contains(Letter.empty())) {
@@ -108,6 +114,11 @@ class _NumdleScreenState extends State<NumdleScreen> {
           _keyboardLetters.removeWhere((e) => e.val == currentNumberLetter.val);
           _keyboardLetters.add(_currentNumber!.letters[i]);
         }
+
+        await Future.delayed(
+          const Duration(milliseconds: 150),
+          () => _flipCardKeys[_currentNumberIndex][i].currentState?.toggleCard(),
+        );
       }
 
       _checkIfWinOrLoss();
@@ -172,6 +183,14 @@ class _NumdleScreenState extends State<NumdleScreen> {
       _solution = Number.fromString(
         fiveLetterNumbers[Random().nextInt(fiveLetterNumbers.length)].toUpperCase(),
       );
+      _flipCardKeys
+        ..clear()
+        ..addAll(
+          List.generate(
+            6,
+            (_) => List.generate(5, (_) => GlobalKey<FlipCardState>()),
+          ),
+        );
       _keyboardLetters.clear();
     });
   }
