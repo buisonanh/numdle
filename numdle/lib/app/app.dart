@@ -10,12 +10,10 @@ class Numdle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: const Text('Hello Numdle'),
-        ),
-      ),
+      title: 'Numdle',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Colors.black),
+      home: const NumdleScreen(),
     );
   }
 }
