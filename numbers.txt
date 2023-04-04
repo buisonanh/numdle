@@ -1,5 +1,4 @@
-const List<String> fiveLetterNumbers = [
-  '35628',
+'35628',
 '97834',
 '27531',
 '95281',
@@ -3998,5 +3997,4 @@ const List<String> fiveLetterNumbers = [
 '37629',
 '18230',
 '61279',
-'65482'
-];
+'65482',
