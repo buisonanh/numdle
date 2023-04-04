@@ -29,8 +29,26 @@ class _NumdleScreenState extends State<NumdleScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-
+    return Scaffold (
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: const Text(
+          'NUMDLE',
+          style: TextStyle(
+            fontSize: 36,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 4,
+          ),
+        ),
+      ),
+      body:  Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Board(board: _board),
+        ],
+      ),
     );
   }
 }
