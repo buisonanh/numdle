@@ -1,21 +1,4 @@
 import 'package:flutter/material.dart';
+import 'package:numdle/app/app.dart';
 
-void main() {
-  runApp( Numdle() );
-}
-
-class Numdle extends StatelessWidget {
-  const Numdle({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: const Text('Hello Numdle'),
-        ),
-      ),
-    );
-  }
-}
+void main() => runApp(const Numdle());
