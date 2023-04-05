@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:numdle/numdle/models/letter_model.dart';
 
 const _qwerty = [
-  ['5', '6', '7', '8', '9', 'DEL'],
-  ['0', '1', '2', '3', '4', 'ENTER'],
+  ['5', '6', '7', '8', '9'],
+  ['0', '1', '2', '3', '4'],
+  ['DEL', 'ENTER'],
 ];
 
 class Keyboard extends StatelessWidget {
@@ -64,7 +65,7 @@ class _KeyboardButton extends StatelessWidget {
   const _KeyboardButton({ 
     Key? key,
     this.height = 50,
-    this.width = 50,
+    this.width = 40,
     required this.onTap,
     required this.backgroundColor,
     required this.letter,
@@ -74,9 +75,9 @@ class _KeyboardButton extends StatelessWidget {
     required VoidCallback onTap,
   }) =>
       _KeyboardButton(
-        width: 70,
+        width: 60,
         onTap: onTap,
-        backgroundColor: Color.fromRGBO(39, 125, 161, 150),
+        backgroundColor: Color.fromRGBO(0, 53, 102, 150),
         letter: 'DEL',
       );
 
@@ -86,7 +87,7 @@ class _KeyboardButton extends StatelessWidget {
       _KeyboardButton(
         width: 70,
         onTap: onTap,
-        backgroundColor: Color.fromRGBO(39, 125, 161, 50),
+        backgroundColor: Color.fromRGBO(0, 53, 102, 1),
         letter: 'ENTER',
       );
 
@@ -104,7 +105,7 @@ class _KeyboardButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        vertical: 3.0,
+        vertical: 2.0,
         horizontal: 2.0,
       ),
       child: Material(
@@ -119,7 +120,7 @@ class _KeyboardButton extends StatelessWidget {
             child: Text(
               letter,
               style: const TextStyle(
-                fontSize: 15,
+                fontSize: 17,
                 fontWeight: FontWeight.w600,
               ),
             ),

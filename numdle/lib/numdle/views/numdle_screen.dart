@@ -49,9 +49,9 @@ class _NumdleScreenState extends State<NumdleScreen> {
         title: const Text(
           'NUMDLE',
           style: TextStyle(
-            fontSize: 36,
+            fontSize: 32,
             fontWeight: FontWeight.bold,
-            letterSpacing: 4,
+            letterSpacing: 3,
           ),
         ),
       ),
@@ -152,7 +152,7 @@ class _NumdleScreenState extends State<NumdleScreen> {
           duration: const Duration(days: 1),
           backgroundColor: Colors.redAccent[200],
           content: Text(
-            'You lost! Solution: ${_solution.wordString}',
+            'You lost!          Solution: ${_solution.wordString}',
             style: const TextStyle(color: Colors.white),
           ),
           action: SnackBarAction(

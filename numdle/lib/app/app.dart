@@ -13,7 +13,7 @@ class Numdle extends StatelessWidget {
     return MaterialApp(
       title: 'Numdle',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Color.fromRGBO(39, 125, 161, 150)),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: Color.fromRGBO(0, 8, 20, 1)),
       home: const NumdleScreen(),
     );
   }
