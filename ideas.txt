@@ -1,0 +1,8 @@
+- Have 3 mode:
+    + Free play
+    + Shuffle keys
+    + Hardcore (Shuffle keys + Time count)
+
+- Share score (social)
+
+- Login with username
